@@ -56,11 +56,6 @@ func ReadProkaryotes(f io.Reader) (strains []Strain) {
 	records := [][]string{}
 	for {
 		line, err := rd.ReadString('\n')
-		// continue, if it is a comment line.
-		if line[0] == '#' {
-			continue
-		}
-
 		if err != nil {
 			if err != io.EOF {
 				panic(err)
@@ -68,6 +63,10 @@ func ReadProkaryotes(f io.Reader) (strains []Strain) {
 				break
 			}
 		} else {
+			// continue, if it is a comment line.
+			if line[0] == '#' {
+				continue
+			}
 			fields := strings.Split(strings.TrimSpace(line), "\t")
 			records = append(records, fields)
 		}

@@ -89,8 +89,10 @@ func ReadProkaryotes(f io.Reader) (strains []Strain) {
 		}
 
 		for acc, _ := range m {
-			s.Genomes = append(s.Genomes,
-				Genome{Accession: acc, Replicon: "Chromosome"})
+			if acc != "-" {
+				s.Genomes = append(s.Genomes,
+					Genome{Accession: acc, Replicon: "Chromosome"})
+			}
 		}
 
 		strains = append(strains, s)

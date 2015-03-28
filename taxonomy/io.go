@@ -2,6 +2,7 @@ package taxonomy
 
 import (
 	"bufio"
+	"bytes"
 	"io"
 	"os"
 	"path/filepath"
@@ -134,6 +135,12 @@ func ReadGeneticCodes(f io.Reader) (gcMap map[string]*GeneticCode) {
 	}
 
 	return
+}
+
+// Return default all genetic codes find in GCSTRING.
+func GeneticCodes() (m map[string]*GeneticCode) {
+	buf := bytes.NewBufferString(GCSTRING)
+	return ReadGeneticCodes(buf)
 }
 
 func getTables(s string) (table map[string]byte, ffCodons map[string]bool) {

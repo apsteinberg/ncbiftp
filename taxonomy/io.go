@@ -220,3 +220,9 @@ func getNames(f io.Reader) map[string]string {
 	}
 	return nameMap
 }
+
+// IsFourFold return true is the codon belong to four-fold degenerated.
+func (gc GeneticCode) IsFourFold(codon string) bool {
+	codon = strings.ToUpper(codon)
+	return gc.FFCodons[codon]
+}

@@ -1,2 +1,2 @@
 # ncbiftp
-Some useful packages to read data from NCBI ftp.
+Some useful libraries for reading data from NCBI ftp.

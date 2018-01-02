@@ -2,14 +2,15 @@ package profiling
 
 import (
 	"fmt"
-	"github.com/mingzhi/biogo/feat/gff"
-	"github.com/mingzhi/biogo/seq"
-	"github.com/mingzhi/ncbiftp/seqrecord"
-	"github.com/mingzhi/ncbiftp/taxonomy"
 	"os"
+
+	"github.com/kussell-lab/biogo/feat/gff"
+	"github.com/kussell-lab/biogo/seq"
+	"github.com/kussell-lab/ncbiftp/seqrecord"
+	"github.com/kussell-lab/ncbiftp/taxonomy"
 )
 
-// Profile contains genomic position profile.
+// Pos contains genomic position profile.
 type Pos struct {
 	Base byte
 	Type byte

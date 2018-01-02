@@ -1,12 +1,13 @@
 package seqrecord
 
 import (
-	"github.com/mingzhi/biogo/seq"
-	"github.com/mingzhi/ncbiftp/taxonomy"
 	"log"
 	"os"
 	"path/filepath"
 	"strings"
+
+	"github.com/kussell-lab/biogo/seq"
+	"github.com/kussell-lab/ncbiftp/taxonomy"
 )
 
 var GCTABLES map[string]*taxonomy.GeneticCode
